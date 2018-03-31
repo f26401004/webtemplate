@@ -1,5 +1,5 @@
 const express = require( 'express' );
-const router = express.Router();
+const router = new express.Router();
 
 // route to filter (announcement/)
 router.get( '/', (req, res) => {
@@ -27,7 +27,7 @@ router.get( '/speech', () => {
 } );
 
 // route to /announcement/recruitment
-router.get( '/recruitment', () => {
+router.get( '/recruitment', function ( req, res ) {
     res.render( 'announcement/recruitment' );
 } );
 
