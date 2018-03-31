@@ -1,13 +1,14 @@
-mixin announce(title,time,excerpt,tagnum,url)
-  section
-    article
-      p(class='article-title')= title
-      p(class='article-time')= time
-      p(class='article-content')= excerpt
-      a detailed
-      div(class='tag')
-        a(class='course') course
-        a(class='graduate') graduate
-        a(class='college') college
-    div(class='fakeimg' src=url)
-         
+mixin announce( title, time, excerpt, articleUrl, imageUrl, ...tags )
+  main#main-container(class='item2')
+    h1(class='main-item')= title
+    article(class='main-item')
+      time= time
+      p= excerpt
+    div(class='main-item main-flex')
+      button
+        a(href=articleUrl) see more
+      aside
+        each tag in tags
+          button(class=tag)
+            a= tag
+    img(class='main-item-img' src=imageUrl)
