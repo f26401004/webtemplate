@@ -2,42 +2,81 @@
 @import navOption
 
 @mixin header
+$font-color: #F8F8F2
 #headerSec
   width: 100%
   height: 30%
   background-color: #262e3e
-  opacity: 1
-  padding: 2rem 2rem 1rem 2rem
+  padding: 2rem 0rem 0rem 0rem
   display: grid
   grid-template-rows: auto auto auto auto
+  grid-template-columns: 4rem 50% auto
+  overflow: hidden
   #csieTitle
+    margin-left: 2rem
+    justify-self: start
+    display: grid
+    grid-row: 1 / span 2
+    grid-column: 1 / span 2
     a
+      display: grid
+      grid-row: 1 / span 2
+      grid-column: 1 / span 2
+      justify-self: start
       text-align: left
+    img
+      display: grid
+      grid-row: 1 / span 2
+      grid-column: 1
+      align-self: center
+      justify-self: start
+      width: 3.5rem;
+      height: auto;
+      padding-top: 3.5rem
+      margin-right: .5rem
+      background: $font-color
+      border-radius: 50%
   h1
-    font-size: 2rem
+    grid-row: 1
+    grid-column: 2
+    font-size: 1.7rem
     font-weight: normal
-    color: #ffffff
+    color: $font-color
+    justify-self: start
   h2
-    font-size: 1.5rem
-    color: #ffffff
+    grid-row: 2
+    grid-column: 2
+    font-size: 1.3rem
+    color: $font-color
+    justify-self: start
   .drop
-    display: none
-    justify-self: end
     grid-row: row 4
-    border-top: .1rem solid white
-    border-bottom: .1rem solid white
+    grid-column: 1 / span 3
+    width: 100%
+    display: none
+    text-align: right
+    justify-self: end
+    margin: 0rem
+    padding: 0 2rem 0 0
+    background-color: #00c3d0
+    a
+      display: inline-block
+      padding: .2rem 1.2rem .2rem 1.2rem
+      height: 100%
+      &:hover
+        background-color: #008891
   a
     font-size: 1.5rem
-    color: #ffffff
+    color: $font-color
     text-align: center
     text-decoration: none
-    margin: 2rem 2rem .5rem 1rem
-    &:link
-    &:visited
-    &:hover
-      color: #000000
 #navBarUl
+  grid-row: row 3
+  grid-column: 1 / span 3
   overflow: hidden
+  margin: 0 2rem 0 0
+  padding: 0rem
   justify-self: end
+  align-self: stretch
 
 
