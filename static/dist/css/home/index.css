@@ -10,13 +10,51 @@
   padding: 0;
   border: 0; }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.navOptionLi {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  justify-content: center; }
+  .navOptionLi button {
+    justify-self: center;
+    grid-row: row 1;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #ffffff;
+    text-align: center;
+    margin: 2rem 1rem .5rem 1rem;
+    border-bottom: 0.5rem solid rgba(0, 184, 227, 0); }
+    .navOptionLi button:hover {
+      border-bottom: 0.5rem solid #00b8e3; }
+  .navOptionLi .triangle {
+    justify-self: center;
+    opacity: 0;
+    text-align: center;
+    grid-row: row 2;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent #ffffff transparent; }
+
 #headerSec {
   width: 100%;
-  background-color: #000000;
-  opacity: 0.7;
+  height: 30%;
+  background-color: #262e3e;
+  opacity: 1;
   padding: 2rem 2rem 1rem 2rem;
   display: grid;
-  grid-template-rows: auto auto auto; }
+  grid-template-rows: auto auto auto auto; }
+  #headerSec #csieTitle a {
+    text-align: left; }
   #headerSec h1 {
     font-size: 2rem;
     font-weight: normal;
@@ -26,16 +64,10 @@
     color: #ffffff; }
   #headerSec .drop {
     display: none;
-    justify-self: end; }
-  #headerSec button {
-    display: inline;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: #ffffff;
-    text-align: center;
-    margin: 2rem 2rem .5rem 1rem; }
-    #headerSec button:hover {
-      border-bottom: 0.5rem solid #00b8e3; }
+    justify-self: end;
+    grid-row: row 4;
+    border-top: .1rem solid white;
+    border-bottom: .1rem solid white; }
   #headerSec a {
     font-size: 1.5rem;
     color: #ffffff;
@@ -44,13 +76,7 @@
     margin: 2rem 2rem .5rem 1rem; }
     #headerSec a:hover {
       color: #000000; }
-  #headerSec .triangle {
-    width: 0;
-    height: 0;
-    display: none;
-    border-style: solid;
-    border-width: 0 20px 20px 20px;
-    border-color: transparent transparent #ffffff transparent; }
 
 #navBarUl {
+  overflow: hidden;
   justify-self: end; }
