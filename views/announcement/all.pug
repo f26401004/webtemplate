@@ -8,17 +8,37 @@ block css
 block header
   +header
 block content
-  div
-    div#toptitle
+  section
+    div
       p All Posts
       h1 全部公告
-    div#filter
+    div
+      div
+        a#college 大學部
+        a#master 碩士
+        a#phd 博士
+        a#faculty 教職人員
+        a#administrative 行政人員
+        a#internal 國際會記
+        a#exhibition 展覽
+        a#scholarship 獎學金
+        a#competition 競賽
+        a#seminar 研討會
+        a#practice 實習
+        a#law 法規彙編
+        a#recruitment 徵人
+        a#speech 演講
+      div
+        p 開始日期
+        input(type='date')
+        p 結束日期
+        input(type='date')
     div#postarea
     +pagination
 block footer
   +footer
 block script
-  script(type='text/javascript') window.config =  {currentPage: #{currentPage}, totalNumber: #{totalNumber}};
+  script(type='text/javascript') window.config = {currentPage: #{currentPage}, totalNumber: #{totalNumber}};
   script(src='https://code.jquery.com/jquery-3.3.1.min.js')
   script(src='/js/pagination.js')
   script(src='/js/post.js')

@@ -10,7 +10,7 @@ window.addEventListener("load" , function addPages () {
         const newLink = document.createElement( "p" );
         newLink.innerHTML = text;
         newLink.href = link;
-        if (text === "« Previous" || text === "Next »") {
+        if (text === "◂ Previous" || text === "Next ▸") {
             newLink.id = "sidebutton";
         }
 
@@ -28,7 +28,7 @@ window.addEventListener("load" , function addPages () {
     if( totalPage > singlePage ){    //then show x pages
 
         // laquo -> add link to first page
-        createPage ( "« Previous", "#");
+        createPage ( "◂ Previous", "#");
 
         const center = Math.ceil( singlePage/2 );   // to judge if u are in the very begin pages or in the end pages
         let beginPages = 0, endPages = 0;   // beginPages=num of pages before and include u. endPages=num of pages after u
@@ -59,7 +59,7 @@ window.addEventListener("load" , function addPages () {
         }
 
         // raquo -> add link to last page
-        createPage ( "Next »", "#" ,false );
+        createPage ( "Next ▸", "#" ,false );
 
     }else{    // then show all the pages
         for( let i = 1; i <= totalPage; ++i ){

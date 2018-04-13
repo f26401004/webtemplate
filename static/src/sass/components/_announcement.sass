@@ -1,10 +1,12 @@
-div
+@import '../components/_filter.sass'
+
+section
   display: grid
-  grid-template-columns: 0.146875fr 0.70625fr 0.146875fr
-  grid-template-rows: 372px 100px 1fr 300px;
+  grid-template-columns: 0.0943fr 0.8114fr 0.0943fr
+  grid-template-rows: 372px 250px 1fr 300px;
   grid-template-areas: "left-1 middle-1 right-1" "left-2 middle-2 right-2" "left-3 middle-3 right-3" "left-4 middle-4 right-4"
   background-color: #F2F4F7 
-  div#toptitle
+  div:nth-child(1)
     margin-top: 272px
     height: 100px
     display: grid
@@ -19,15 +21,18 @@ div
       gird-area: down
       font-size: 40px
       border-bottom: 1px solid #000000
-  div#filter
+  div:nth-child(2)
+    width: 87%
     grid-area: middle-2
-  div#postarea
+    justify-self: center
+    +filter
+  div:nth-child(3)
     grid-area: middle-3
     display: flex
     flex-wrap: wrap
     justify-content: center
     div#post
-      width: 100%
+      width: 87%
       display: grid
       grid-template-columns: 0.7fr 0.3fr
       grid-template-rows: 30px 72px
@@ -67,66 +72,24 @@ div
         a
           width: 104px
           height: 41px
-          padding: 2px 12px
+          padding: 2px 2px
           margin: 6px
           border-radius: 20px
           font-size: 21px
           text-align: center
-        a#college
-          color: #F8F8F2
-          background-color: #F5C150
-          border: 1px solid #F5C150
-        a#master
-          color: #F8F8F2
-          background-color: #E64D3A
-          border: 1px solid #E64D3A
-        a#phd
-          color: #F8F8F2
-          background-color: #434A54
-          border: 1px solid #F5C150
-        a#practice
-          color: #01ADDF
-          background-color: #F2F4F7
-          border: 1px solid #01ADDF
-        a#internal
-          color: #E45C75
-          backgroubd-color: #F2F4F7
-          border: 1px solid #E45C75
-        a#recruitment
-          color: #38E8DE
-          background-color: #F2F4F7
-          border: 1px solid #38E8DE
-        a#seminar
-          color: #006786
-          background-color: #F2F4F7
-          border: 1px solid #006786
-        a#faculty
-          color: #F8F8F2
-          background-color: #01B259
-          border: 1px solid #01B259
-        a#speech
-          color: #FD5540
-          background-color: #F2F4F7
-          border: 1px solid #FD5540
-        a#scholarship
-          color: #6ABC50
-          background-color: #F2F4F7
-          border: 1px solid #6ABC50
-        a#exhibition
-          color: #00B1BD
-          background-color: #F2F4F7
-          border: 1px solid #00B1BD
-        a#administrative
-          color: #F8F8F2
-          background-color: #B352C7
-          border: 1px solid #B352C7
-        a#law
-          color: #B13B2D
-          background-color: #F2F4F7
-          border: 1px solid #B13B2D
-        a#competition
-          color: #386AE8
-          background-color: #F2F4F7
-          border: 1px solid #386AE8
+        +tag("college")
+        +tag("master")
+        +tag("phd")
+        +tag("faculty")
+        +tag("administrative")
+        +tag("internal")
+        +tag("exhibition")
+        +tag("scholarship")
+        +tag("comprtition")
+        +tag("seminar")
+        +tag("practice")
+        +tag("law")
+        +tag("recruitment")
+        +tag("speech")
   #pagination
     grid-area: middle-4
