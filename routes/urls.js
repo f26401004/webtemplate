@@ -10,7 +10,7 @@ const api = require( '../apis/urls' );
 
 const config = require( '../settings/server/config' );
 
-const router = express.Router();
+const router = new express.Router();
 
 const static_path = config.staticUrl();
 

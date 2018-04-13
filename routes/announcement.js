@@ -1,5 +1,5 @@
 const express = require( 'express' );
-const router = express.Router();
+const router = new express.Router();
 
 // route to filter (announcement/)
 router.get( '/', (req, res) => {
@@ -18,16 +18,16 @@ router.get( '/administrator', (req, res) => {
 
 // route to /announcement/activity
 router.get( '/activity', (req, res) => {
-    res.render( 'announcement/acivity' );
+    res.render( 'announcement/activity' );
 } );
 
 // route to /announcement/speech
 router.get( '/speech', () => {
-    res.render( 'announcemnet/speech' );
+    res.render( 'announcement/speech' );
 } );
 
 // route to /announcement/recruitment
-router.get( '/recruitment', () => {
+router.get( '/recruitment', function ( req, res ) {
     res.render( 'announcement/recruitment' );
 } );
 

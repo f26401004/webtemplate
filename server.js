@@ -1,13 +1,12 @@
 const express = require( 'express' );
-const bodyParser = require( 'body-parser' );
 const config = require( './settings/server/config' );
 const routes = require( './routes/urls' );
 const apis = require( './apis/urls' );
 
 const server = express();
 
-server.use( bodyParser.json() );
-server.use( bodyParser.urlencoded( { extended: true } ) );
+//server.use( bodyParser.json() );
+//server.use( bodyParser.urlencoded( { extended: true } ) );
 
 server.listen( config.port );
 
