@@ -16,8 +16,12 @@ const static_path = config.staticUrl();
 
 const urlSettings = ( req, res, next ) => {
     res.locals.static = static_path;
+    // read the number from the database.
+    // if the client is at index html, then add the number and store the number in database.
+    res.locals.visitNumber = 0;
     next();
 };
+
 
 router.use( '/', urlSettings, home );
 // route to pages belongs to /student

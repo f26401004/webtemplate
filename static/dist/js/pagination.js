@@ -1,20 +1,24 @@
-window.addEventListener( "load", function addPages () {
-    const totalData = 100;
-    const pageData = 5;   // how many data in one page
+window.addEventListener("load" , function addPages () {
+    const totalData = window.config.totalNumber;
+    const pageData = 12;   // how many data in one page
     const singlePage = 10;   // show x pages in pagination
     const totalPage = Math.ceil(totalData/pageData);
-    const nowPage = 6;   // you are now in this page
+    const nowPage = window.config.currentPage;   // you are now in this page
     const pagination = document.getElementById( "pagination" );
 
     function createPage ( text, link) {
-        const newLink = document.createElement( "a" );
+        const newLink = document.createElement( "p" );
         newLink.innerHTML = text;
         newLink.href = link;
+        if (text === "« Previous" || text === "Next »") {
+            newLink.id = "sidebutton";
+        }
+
         pagination.appendChild( newLink );
     }
 
     function createPageActive ( text, link) {
-        const newLink = document.createElement( "a" );
+        const newLink = document.createElement( "p" );
         newLink.innerHTML = text;
         newLink.href = link;
         newLink.classList.add('active');
@@ -24,7 +28,7 @@ window.addEventListener( "load", function addPages () {
     if( totalPage > singlePage ){    //then show x pages
 
         // laquo -> add link to first page
-        createPage ( "«", "#");
+        createPage ( "« Previous", "#");
 
         const center = Math.ceil( singlePage/2 );   // to judge if u are in the very begin pages or in the end pages
         let beginPages = 0, endPages = 0;   // beginPages=num of pages before and include u. endPages=num of pages after u
@@ -55,18 +59,17 @@ window.addEventListener( "load", function addPages () {
         }
 
         // raquo -> add link to last page
-        createPage ( "»", "#" ,false );
+        createPage ( "Next »", "#" ,false );
 
     }else{    // then show all the pages
         for( let i = 1; i <= totalPage; ++i ){
-            apage.innerHTML = i;
+            //apage.innerHTML = i;
             if( i === nowPage ){
-                createPageActive ( page_num, "#");
+                createPageActive ( i, "#");
             }else{
-                createPage ( page_num, "#");
+                createPage ( i, "#");
             }
         }
     }
-
-    window.removeEventListener( "load", addPages );
-} );
+    window.removeEventListener("load", addPages);
+} )

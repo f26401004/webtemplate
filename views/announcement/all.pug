@@ -2,12 +2,23 @@ extends ../layouts/announcement.pug
 
 block css
   link(rel='stylesheet' href='/css/announcement/all.css')
+  link(rel='stylesheet' href='/css/announcement/pagination.css')
+  link(rel='stylesheet' href='/css/home/index.css')
 
 block header
+  +header
 block content
-  h1 所有公告
-  div(class='main')
-    +announce("title","2018 02 02","excerpt",3)
+  div
+    div#toptitle
+      p All Posts
+      h1 全部公告
+    div#filter
+    div#postarea
+    +pagination
 block footer
-    +footer
+  +footer
 block script
+  script(type='text/javascript') window.config =  {currentPage: #{currentPage}, totalNumber: #{totalNumber}};
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  script(src='/js/pagination.js')
+  script(src='/js/post.js')

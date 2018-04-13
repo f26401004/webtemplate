@@ -1,101 +1,132 @@
-section
-  padding: 0
-  margin: 0 0 20.14px 0
-  width: 100%
-  height: 270.86px
-.fakeimg
-  float: right
-  background-color: #343434
-  width: 31%
-  height: 100%
-  padding: 0
-  opacity: 0.7
-article
-  position: relative
-  float: left
-  width: 69%
-  height: 100%
-  padding: 0
-  margin: 0
-  border: 1px solid #707070
-  background-color: #ffffff
-
-.article-title
-  position: absolute
-  top: 46px
-  left: 31.73px
-  width: 629px
-  height: 43px
-  font-size: 30px
-  font-family: Segoe UI,Regular
-  text-align: left
-  padding: 0
-  margin: 0
-
-.article-time 
-  position: absolute
-  top: 89.63px
-  left: 40.73px
-  width: 162px
-  height: 28px
-  font-size: 20px
-  font-family: Segoe UI,Regular
-  text-align: center
-  opacity: 0.5
-  padding: 0
-
-.article-content 
-  position: absolute
-  top: 121px
-  left: 38.73px
-  width: 513px
-  height: 37px
-  font-size: 20px
-  font-family: Segoe UI,Regular
-  text-align: left
-  padding: 0
-
-.article-content::after 
-  content: "..."
-
-article > a
-  position: absolute
-  font-size: 20px
-  color: #ffffff
-  text-align: center
-  background-color: #424242
-  width: 166px
-  height: 45px
-  top: 179px
-  left: 41.73px
-  padding: 8.5px
-  margin: 0
-
-.tag
-  position: absolute
-  right: 39.52px
-  bottom: 45.86px
-  color: #ffffff
-  padding: 0
-  margin: 0
-
-.tag a
-  display: inline-block
-  padding: 4px 2px
-  margin-left: 12px
-
-.course
-  background-color: #ef6000
-
-.college
-  background-color: #00b8e3
-
-.graduate
-  background-color: #F9D907
-.main
-  position: absolute
-  top: 295px
-  left: 584.27px
-  width: 58%
-  max-width: 1112.73px
-
+div
+  display: grid
+  grid-template-columns: 0.146875fr 0.70625fr 0.146875fr
+  grid-template-rows: 372px 100px 1fr 300px;
+  grid-template-areas: "left-1 middle-1 right-1" "left-2 middle-2 right-2" "left-3 middle-3 right-3" "left-4 middle-4 right-4"
+  background-color: #F2F4F7 
+  div#toptitle
+    margin-top: 272px
+    height: 100px
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 32px 1fr
+    grid-template-areas: "up" "down"
+    grid-area: middle-1
+    p:nth-child(1)
+      grid-area: up
+      font-size: 21px
+    h1
+      gird-area: down
+      font-size: 40px
+      border-bottom: 1px solid #000000
+  div#filter
+    grid-area: middle-2
+  div#postarea
+    grid-area: middle-3
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    div#post
+      width: 100%
+      display: grid
+      grid-template-columns: 0.7fr 0.3fr
+      grid-template-rows: 30px 72px
+      grid-template-areas: "first-1 first-2" "second-1 second-2"
+      margin-top: 54px
+      padding: 30px 30px
+      height: 156px
+      background-color: #FFFFFF
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+      p:nth-child(1)
+        grid-area: first-1
+        height: 33px
+        color: #000000
+        font-size: 24px
+      p:nth-child(2)
+        grid-area: second-1
+        width: 687px
+        height: 74px
+        margin-left: 12px
+        color: #000000
+        font-size: 21px
+      p:nth-child(3)
+        grid-area: second-2
+        justify-self: end
+        align-self: end
+        width: 170px
+        height: 29px
+        color: #B5BABF
+        font-size: 21px
+      #tag
+        display: flex
+        justify-content: flex-end
+        grid-area: first-2
+        background-color: #FFFFFF
+        padding: 0
+        margin: 0
+        a
+          width: 104px
+          height: 41px
+          padding: 2px 12px
+          margin: 6px
+          border-radius: 20px
+          font-size: 21px
+          text-align: center
+        a#college
+          color: #F8F8F2
+          background-color: #F5C150
+          border: 1px solid #F5C150
+        a#master
+          color: #F8F8F2
+          background-color: #E64D3A
+          border: 1px solid #E64D3A
+        a#phd
+          color: #F8F8F2
+          background-color: #434A54
+          border: 1px solid #F5C150
+        a#practice
+          color: #01ADDF
+          background-color: #F2F4F7
+          border: 1px solid #01ADDF
+        a#internal
+          color: #E45C75
+          backgroubd-color: #F2F4F7
+          border: 1px solid #E45C75
+        a#recruitment
+          color: #38E8DE
+          background-color: #F2F4F7
+          border: 1px solid #38E8DE
+        a#seminar
+          color: #006786
+          background-color: #F2F4F7
+          border: 1px solid #006786
+        a#faculty
+          color: #F8F8F2
+          background-color: #01B259
+          border: 1px solid #01B259
+        a#speech
+          color: #FD5540
+          background-color: #F2F4F7
+          border: 1px solid #FD5540
+        a#scholarship
+          color: #6ABC50
+          background-color: #F2F4F7
+          border: 1px solid #6ABC50
+        a#exhibition
+          color: #00B1BD
+          background-color: #F2F4F7
+          border: 1px solid #00B1BD
+        a#administrative
+          color: #F8F8F2
+          background-color: #B352C7
+          border: 1px solid #B352C7
+        a#law
+          color: #B13B2D
+          background-color: #F2F4F7
+          border: 1px solid #B13B2D
+        a#competition
+          color: #386AE8
+          background-color: #F2F4F7
+          border: 1px solid #386AE8
+  #pagination
+    grid-area: middle-4
