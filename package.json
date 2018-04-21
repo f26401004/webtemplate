@@ -7,7 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "node-sass static/src/sass/about/teachers.scss  static/dist/css/about/teachers.css -w",
     "compile:sass": "node-sass static/src/sass/about/teachers.scss  static/dist/css/about/teachers.css",
