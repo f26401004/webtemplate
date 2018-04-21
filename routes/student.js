@@ -39,25 +39,6 @@ const query_handler = ( page_name ) => {
     }
 }
 
-<<<<<<< HEAD
-// route to /student/course
-router.get( '/course', query_handler('/course'));
-
-// route to /student/college
-router.get( '/college', query_handler('/college'));
-
-// route to /student/master
-router.get( '/master', query_handler('/master'));
-
-// route to /student/phd
-router.get( '/phd', query_handler('/phd'));
-
-// route to /student/scholarship
-router.get( '/scholarship',query_handler('/scholarship'));
-
-// route to /student/international
-router.get( '/international', query_handler('/international'));
-=======
 // resolve URL /student/course
 router.get( '/course', function ( req, res ) {
     res.render( 'student/course' );
@@ -87,6 +68,5 @@ router.get( '/scholarship', function ( req, res ) {
 router.get( '/international', function ( req, res ) {
     res.render( 'student/international' );
 } );
->>>>>>> b52206b4cae27575cfbc6448c8a1d5b7ff862ad6
 
 module.exports = router;
