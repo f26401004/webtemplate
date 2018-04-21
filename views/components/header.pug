@@ -1,7 +1,7 @@
 mixin header()
   header#headerSec
-    include ../components/navOption.pug
-    script(src="/js/components/header.js")
+    include ../components/nav.pug
+    script(src=`${ static }/js/components/header.js`)
     div#csieTitle
       a(href='/')
         img
@@ -11,12 +11,12 @@ mixin header()
     a(href='/') English
     ul#navBarUl
       a(href='/')
-        +navOption('linkIndex', '首頁', '')
-      +navOption('linkAbout', '關於本系', 'dropAbout')
-      +navOption('linkResearch', '學術研究', 'dropResearch')
-      +navOption('linkStudent', '學生事務', 'dropStudent')
-      +navOption('linkAnnouncement', '系所公告', 'dropAnnouncement')
-      +navOption('linkResource', '資源連結', 'dropResource')
+        +nav('linkIndex', '首頁', '')
+      +nav('linkAbout', '關於本系', 'dropAbout')
+      +nav('linkResearch', '學術研究', 'dropResearch')
+      +nav('linkStudent', '學生事務', 'dropStudent')
+      +nav('linkAnnouncement', '系所公告', 'dropAnnouncement')
+      +nav('linkResource', '資源連結', 'dropResource')
     div#dropAbout(class='drop')
       a(href='/about/intro') 系所介紹
       a(href='/about/teachers') 師資陣容
