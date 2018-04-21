@@ -12,10 +12,10 @@ const config = require( '../settings/server/config' );
 
 const router = new express.Router();
 
-const static_path = config.staticUrl();
+const staticPath = config.staticUrl();
 
 const urlSettings = ( req, res, next ) => {
-    res.locals.static = static_path;
+    res.locals.static = staticPath;
     // read the number from the database.
     // if the client is at index html, then add the number and store the number in database.
     res.locals.visitNumber = 0;

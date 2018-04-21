@@ -3,14 +3,14 @@ const express = require( 'express' );
 const router = express.Router();
 const testDB = require ( './testDB' );
 
-const query_handler = ( page_name ) => {
+const query_handler = ( pageName ) => {
     return function(req, res, next){
-        let objToSend = {page: req.query.page, annoucement_id: req.query.announcement_id, tag: req.query.tag, data_number: 0};
+        let objToSend = {page: req.query.page, announcementId: req.query.announcementId, tag: req.query.tag, dataNumber: 0};
 
         if(objToSend.page == undefined) objToSend.page = 1;
 
         // tag correspond.
-        switch (page_name){
+        switch (pageName){
             case '/course':
                 objToSend.tag = 6;
                 break;
@@ -30,11 +30,11 @@ const query_handler = ( page_name ) => {
 				objToSend.tag =11;
 				break;
         }
-        let data = {data_number: 1, content: testDB.find()};
-        if(objToSend.announcement_id != undefined){
-            res.render( 'student/detail', { announcement_id: objToSend.announcement_id} );
+        let data = {dataNumber: 1, content: testDB.find()};
+        if(objToSend.announcementId != undefined){
+            res.render( 'student/detail', { announcementId: objToSend.announcementId} );
         }else{
-            res.render( 'student/' + page_name, data);
+            res.render( 'student/' + pageName, data);
         }
     }
 }
