@@ -1,6 +1,6 @@
 // router for /student
 const express = require( 'express' );
-const router = express.Router();
+const router = new express.Router();
 const testDB = require ( './testDB' );
 
 const queryHandler = ( pageName ) => {

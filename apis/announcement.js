@@ -1,5 +1,5 @@
 const express = require( 'express' );
-const router = express.Router();
+const router = new express.Router();
 const model = require( '../models/index.js' );
 
 // route to /announcement/all
