@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require( 'express' );
 const router = new express.Router();
 
@@ -28,29 +27,6 @@ router.get( '/activity', (req, res) => {
 
 // route to /announcement/speech
 router.get( '/speech', () => {
-=======
-// router for /announcement
-const express = require( 'express' );
-const router = new express.Router();
-
-// resolve URL /announcement/all
-router.get( '/all', function ( req, res ) {
-    res.render( 'announcement/all' );
-} );
-
-// resolve URL /announcement/administrator
-router.get( '/administrator', function ( req, res ) {
-    res.render( 'announcement/administrator' );
-} );
-
-// resolve URL /announcement/activity
-router.get( '/activity', function ( req, res ) {
-    res.render( 'announcement/activity' );
-} );
-
-// resolve URL /announcement/speech
-router.get( '/speech', function ( req, res ) {
->>>>>>> b52206b4cae27575cfbc6448c8a1d5b7ff862ad6
     res.render( 'announcement/speech' );
 } );
 
