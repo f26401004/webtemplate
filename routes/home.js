@@ -4,7 +4,7 @@ const express = require( 'express' );
 const router = new express.Router();
 
 // route to root directory
-router.get( '/', function( req, res ) {
+router.get( '/', function ( req, res ) {
     let objToSend = {};
 
     objToSend.announcementId = req.query.announcementId;
@@ -12,16 +12,20 @@ router.get( '/', function( req, res ) {
     objToSend.time = req.query.time;
     objToSend.announcementData = 'ask db';
 
-    if(objToSend.announcementId != undefined){
+    if( typeof objToSend.announcementId !== 'undefined' )
+
         // check if announcementId is valid
-        res.render( 'announcement/detail', {announcementId : objToSend.announcementId} );
-    }else if(objToSend.tag != undefined || objToSend.time != undefined){
+        res.render( 'announcement/detail', {
+            announcementId: objToSend.announcementId, } );
+    else if( typeof objToSend.tag !== 'undefined' ||
+        typeof objToSend.time !== 'undefined' )
+
         // check if tag is valid
         // check if time is valid, if time == undefined -> no time filter
         res.render( 'search/search', objToSend );
-    }else{
+    else
         res.render( 'home/index' );
-    }
+
 } );
 
 module.exports = router;
