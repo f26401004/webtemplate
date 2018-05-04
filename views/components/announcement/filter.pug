@@ -1,0 +1,25 @@
+mixin filter( ...tags )
+  section.filter
+    +filter__tags( ...tags )
+    +filter__time()
+  
+mixin filter__tags( ...tags )
+  - 
+    let validation = [
+      'college', 'master', 'phd', 'teacher', 'administrator', 
+      'international', 'exhibition', 'speech', 'competition', 'conference',
+      'internship', 'law', 'recruitment', 'scholarship',
+    ];
+    for( tag of tags )
+      if( !validation.indexOf(tag) )
+        throw new Error( `invalid tag ${ tag }` );
+  article.filter__tags.tags
+    each tag in tags
+      button( class=`tags__tag--${ tag } tags__tag--radius`)= tag
+
+mixin filter__time()
+  article.filter__time.time
+    label(for="filterDateBegin") 開始日期
+    label(for="filterDateEnd") 結束日期
+    input( type='date' id='filterDateBegin' value='2018-04-25' class='time__dateinput--background' )
+    input( type='date' id='filterDateEnd' value='2018-04-25' class='time__dateinput--background' )

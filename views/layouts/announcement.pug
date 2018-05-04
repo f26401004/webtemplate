@@ -1,11 +1,16 @@
-include ../components/announcement.pug
+include ../components/announcement/announcement.pug
+include ../components/announcement/title.pug
+include ../components/announcement/filter.pug
 doctype html
 html
   head
-    title= title
     block css
   body
     block header
-    block content
+    section#content-container
+      block title
+      block filter
+      block content
+      block page 
     block footer
     block script
