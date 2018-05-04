@@ -7,9 +7,13 @@ const research = require( './research' );
 const announcement = require( './announcement' );
 const resource = require( './resource' );
 
+const api = require( '../apis/urls' );
+
 const router = new express.Router();
 
 router.use( '/', home );
+
+router.use( '/api', api );
 
 // resolve URL /student
 router.use( '/student', student );
