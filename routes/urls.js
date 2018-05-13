@@ -12,7 +12,6 @@ const config = require( '../settings/server/config' );
 
 const router = new express.Router();
 
-const staticPath = config.staticUrl();
 
 const urlSettings = ( req, res, next ) => {
     res.locals.static = staticPath;

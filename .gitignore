@@ -11,6 +11,10 @@ package-lock.json
 .npmrc
 .lock-wscript
 
+# sass files
+.sass-cache
+static/src/sass/components/common/_static.scss
+
 # OS generated files
 ## Mac OS
 .DS_Store
