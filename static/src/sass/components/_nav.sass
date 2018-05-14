@@ -1,0 +1,24 @@
+@import './common/_reset.scss'
+
+@mixin navOption
+$font-color: #F8F8F2
+.navOptionLi
+  height: 100%
+  display: inline-grid
+  justify-items: center
+  align-self: stretch
+  button
+    outline: none
+    justify-self: center
+    padding: .2rem 1rem .2rem 1rem
+    align-self: stretch
+    cursor: pointer
+    font-size: 1.5rem
+    background-color: rgba(0, 0, 0, 0)
+    color: $font-color
+    text-align: center
+    margin-top: 2rem
+    margin-bottom: 0rem
+    border-bottom: .5rem solid rgba(0, 195, 208, 0)
+    &:hover, .btn_selected
+      border-bottom: .5rem solid rgba(0, 195, 208, 1)

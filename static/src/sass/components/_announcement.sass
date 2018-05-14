@@ -1,0 +1,95 @@
+@import '../components/_filter.sass'
+
+section
+  display: grid
+  grid-template-columns: 0.0943fr 0.8114fr 0.0943fr
+  grid-template-rows: 372px 250px 1fr 300px;
+  grid-template-areas: "left-1 middle-1 right-1" "left-2 middle-2 right-2" "left-3 middle-3 right-3" "left-4 middle-4 right-4"
+  background-color: #F2F4F7 
+  div:nth-child(1)
+    margin-top: 272px
+    height: 100px
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 32px 1fr
+    grid-template-areas: "up" "down"
+    grid-area: middle-1
+    p:nth-child(1)
+      grid-area: up
+      font-size: 21px
+    h1
+      gird-area: down
+      font-size: 40px
+      border-bottom: 1px solid #000000
+  div:nth-child(2)
+    width: 87%
+    grid-area: middle-2
+    justify-self: center
+    +filter
+  div:nth-child(3)
+    grid-area: middle-3
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    div#post
+      width: 87%
+      display: grid
+      grid-template-columns: 0.7fr 0.3fr
+      grid-template-rows: 30px 72px
+      grid-template-areas: "first-1 first-2" "second-1 second-2"
+      margin-top: 54px
+      padding: 30px 30px
+      height: 156px
+      background-color: #FFFFFF
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+      p:nth-child(1)
+        grid-area: first-1
+        height: 33px
+        color: #000000
+        font-size: 24px
+      p:nth-child(2)
+        grid-area: second-1
+        width: 687px
+        height: 74px
+        margin-left: 12px
+        color: #000000
+        font-size: 21px
+      p:nth-child(3)
+        grid-area: second-2
+        justify-self: end
+        align-self: end
+        width: 170px
+        height: 29px
+        color: #B5BABF
+        font-size: 21px
+      #tag
+        display: flex
+        justify-content: flex-end
+        grid-area: first-2
+        background-color: #FFFFFF
+        padding: 0
+        margin: 0
+        a
+          width: 104px
+          height: 41px
+          padding: 2px 2px
+          margin: 6px
+          border-radius: 20px
+          font-size: 21px
+          text-align: center
+        +tag("college")
+        +tag("master")
+        +tag("phd")
+        +tag("faculty")
+        +tag("administrative")
+        +tag("internal")
+        +tag("exhibition")
+        +tag("scholarship")
+        +tag("comprtition")
+        +tag("seminar")
+        +tag("practice")
+        +tag("law")
+        +tag("recruitment")
+        +tag("speech")
+  #pagination
+    grid-area: middle-4

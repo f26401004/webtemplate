@@ -1,5 +1,5 @@
 /* jshint indent: 2 */
-
+const seauelize = require( 'sequelize' );
 module.exports = function ( sequelize, DataTypes ) {
     return sequelize.define( 'NEWS', {
         ID: {

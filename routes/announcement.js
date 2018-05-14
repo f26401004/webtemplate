@@ -27,4 +27,5 @@ router.get( '/recruitment', function ( req, res ) {
     res.render( 'announcement/recruitment' );
 } );
 
+
 module.exports = router;

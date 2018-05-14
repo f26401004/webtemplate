@@ -1,0 +1,43 @@
+@import './common/_reset.scss'
+
+.footer
+  display: grid
+  width: 1fr
+  height: 1fr
+  padding: 5vh 7vw 5vh 7vw
+  background-color: #262E3E
+  grid-template-columns: 0.5fr 0.5fr
+  grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr
+  grid-template-areas: "first-1 first-2" "second-1 second-2" "third-1 third-2" "forth-1 forth-2"
+  font-size: 21px
+  p:nth-child(1)
+    grid-area: first-1
+    padding: 1vh
+    justify-self: start
+    color: #FEFEFE
+  p:nth-child(2)
+    grid-area: second-1
+    padding: 1vh
+    justify-self: start
+    color: #FEFEFE
+    a
+      color: #FEFEFE
+  p:nth-child(3)
+    grid-area: third-1
+    padding: 1vh
+    justify-self: start
+    color: #FEFEFE
+  a
+    grid-area: forth-1
+    padding: 1vh
+    justify-self: start
+    color: #FEFEFE
+  img
+    grid-area: third-2
+    padding: 1vh
+    justify-self: end
+  p
+    grid-area: forth-2
+    padding: 1vh
+    justify-self: end
+    color: #FEFEFE

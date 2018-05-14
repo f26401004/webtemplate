@@ -1,0 +1,85 @@
+@import './_tag.sass'
+
+@mixin filter 
+  div:nth-child(1)
+    float: left
+    margin: 57px 0px
+    width: 856px
+    display: flex
+    flex-wrap: wrap
+    a
+      width: 104px
+      height: 41px
+      padding: 2px 2px
+      margin: 6px
+      border-radius: 20px
+      font-size: 21px
+      text-align: center
+    +tag("college")
+    +tag("master")
+    +tag("phd")
+    +tag("faculty")
+    +tag("administrative")
+    +tag("internal")
+    +tag("exhibition")
+    +tag("scholarship")
+    +tag("competition")
+    +tag("seminar")
+    +tag("practice")
+    +tag("law")
+    +tag("recruitment")
+    +tag("speech")
+  div:nth-child(2)
+    margin: 57px 0px
+    margin-left: 35px
+    width: 435px
+    display: grid
+    grid-template-columns: 0.5fr 0.5fr
+    grid-template-rows: 0.2fr 0.8fr
+    grid-template-areas: "first-1 second-1" " first-2 second-2"
+    p:nth-child(1)
+      grid-area: first-1
+      font-size: 21px
+      color: #000000
+    p:nth-child(3)
+      grid-area: "secnod-1"
+      font-size: 21px
+      color: #000000
+    input:nth-child(2)
+      position: relative
+      grid-area: first-2
+      width: 192px
+      height: 52px
+      padding: 0px 24px
+      border-radius: 26px
+    p:nth-child(1)::after
+      position: absolute
+      content: ""
+      width: 24px
+      hieght: 24px
+      display: block
+      margin-left: 140px
+      margin-top: 16px
+      font-size: 21px
+      z-index: 999
+      color: #000000
+    input:nth-child(4)
+      position: relative
+      grid-area: second-2
+      width: 192px
+      height: 52px
+      padding: 0px 24px
+      border-radius: 26px
+    p:nth-child(3)::after
+      position: absolute
+      content: ""
+      width: 24px
+      hieght: 24px
+      display: block
+      margin-left: 140px
+      margin-top: 16px
+      font-size: 21px
+      z-index: 999
+      color: #000000
+
+

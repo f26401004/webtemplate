@@ -1,77 +1,146 @@
-window.addEventListener( 'load', function () {
-    getPost ();
-    window.removeEventListener( 'load', getPost );
-} );
-
-function getPost () {
-    const postArea = document.getElementsByClassName( 'announcement' );
-    const tagNameMap = new Map();
-
-    initTagNameMap();
-
-    fetch ( 'http://localhost:3000/api/announcement/all', { method: 'get', } )
-        .then ( function ( response ) {
-            if ( !response.ok )
-                throw new Error( response.statusText );
-            return response.json();
-        } )
-        .then ( function ( jsonArray ) {
-            for( let i = 0; i < jsonArray.length; ++i ) {
-                let data = jsonArray[ i ];
-                createPost( data.title, data.content, data.time, data.tag );
+window.addEventListener("load", function getPost() {
+    const postArea = document.getElementById("postarea");
+    $.ajax({
+        url: "http://localhost:3000/api/announcement/all",
+        type: "GET",
+        contentType: 'application/json',
+        success: function(jsonArray) {
+            console.log(jsonArray[0].title);
+            for( let i = 0 ; i < jsonArray.length ; ++i)
+            {
+                let data = jsonArray[i]
+                createPost(data.title, data.content, data.time, data.tag);
             }
-        } )
-        .catch ( function ( error ) {
-            console.error( error );
-        } );
-
-    function createPost ( title, content, time, tag ) {
-        let newPost = document.createElement( 'section' );
-        newPost.classList.add( 'post' );
-
-        const newTitle = document.createElement( 'h1' );
-        newTitle.classList.add( 'post__title' );
-        newTitle.textContent = title;
-        newPost.appendChild( newTitle );
-
-        let newTagArea =  document.createElement( 'aside' );
-        newTagArea.classList.add( 'tag' );
-
-        for( let i = 0; i < tag.length; ++i ) {
-            let newTag = document.createElement( 'button' );
-            newTag.classList.add( `tags__tag--${tag[ i ]}` );
-            newTag.classList.add( 'tags__tag--radius' );
-            newTag.textContent = tagNameMap.get( tag[ i ] );
-            newTagArea.appendChild( newTag );
+        },
+        error: function(error) {
         }
-        newPost.appendChild( newTagArea );
+    });
 
-        let newContent = document.createElement( 'p' );
-        newContent.classList.add( post__article );
-        newContent.textContent = content;
-        newPost.appendChild( newContent );
+    function createPost(title, content, time, tag) {
+        let newPost = document.createElement("div");
+        newPost.id = "post";
 
-        let newTime = document.createElement( 'time' );
-        newTime.textContent = time;
-        newPost.appendChild( newTime );
+        let newTitle = document.createElement("p");
+        newTitle.innerHTML = title;
 
-        postArea.appendChild( newPost );
+        let newContent = document.createElement("p");
+        newContent.innerHTML = content;
+
+        let newTime = document.createElement("p");
+        newTime.innerHTML = time;
+
+        newPost.appendChild(newTitle);
+        newPost.appendChild(newContent);
+        newPost.appendChild(newTime);
+
+        let newTagArea =  document.createElement("div");
+        newTagArea.id = "tag";
+
+        for(let i = 0 ; i < tag.length ; ++i) {
+            let newTag = document.createElement("a");
+            newTag.id = tagIdMapping(tag[i]);
+            newTag.innerHTML = tagNameMapping(tag[i]);
+            newTagArea.appendChild(newTag);
+        }
+        newPost.appendChild(newTagArea);
+
+        postArea.appendChild(newPost);
     }
 
-    function initTagNameMap () {
-        tagNameMap.set( 1, 'college' );
-        tagNameMap.set( 2, 'master' );
-        tagNameMap.set( 3, 'phd' );
-        tagNameMap.set( 4, 'teacher' );
-        tagNameMap.set( 5, 'administrator' );
-        tagNameMap.set( 6, 'international' );
-        tagNameMap.set( 7, 'exhibition' );
-        tagNameMap.set( 8, 'speech' );
-        tagNameMap.set( 9, 'competition' );
-        tagNameMap.set( 10, 'conference' );
-        tagNameMap.set( 11, 'internship' );
-        tagNameMap.set( 12, 'law' );
-        tagNameMap.set( 13, 'recruitment' );
-        tagNameMap.set( 14, 'scholarship' );
+    function tagIdMapping(tag)
+    {
+        switch(tag) {
+            case 1:
+                return "college";
+                break;
+            case 2:
+                return "master"
+                    break;
+            case 3:
+                return "phd"
+                    break;
+            case 4:
+                return "practice"
+                    break;
+            case 5:
+                return "internal"
+                    break;
+            case 6:
+                return "recruitment"
+                    break;
+            case 7:
+                return "seminar"
+                    break;
+            case 8:
+                return "faculty"
+                    break;
+            case 9:
+                return "speech"
+                    break;
+            case 10:
+                return "scholarship"
+                    break;
+            case 11:
+                return "exhibition"
+                    break;
+            case 12:
+                return "administrative"
+                    break;
+            case 13:
+                return "law"
+                    break;
+            case 14:
+                return "competition"
+                    break;
+        }
     }
-}
+    function tagNameMapping(tag)
+    {
+        switch(tag) {
+            case 1:
+                return "大學部";
+                break;
+            case 2:
+                return "碩士"
+                    break;
+            case 3:
+                return "博士"
+                    break;
+            case 4:
+                return "實習"
+                    break;
+            case 5:
+                return "國際交流"
+                    break;
+            case 6:
+                return "徵人"
+                    break;
+            case 7:
+                return "研討會"
+                    break;
+            case 8:
+                return "教職人員"
+                    break;
+            case 9:
+                return "演講"
+                    break;
+            case 10:
+                return "獎學金"
+                    break;
+            case 11:
+                return "展覽"
+                    break;
+            case 12:
+                return "行政人員"
+                    break;
+            case 13:
+                return "法規彙編"
+                    break;
+            case 14:
+                return "競賽"
+                    break;
+        }
+    }
+
+    window.removeEventListener("load", getPost);
+})

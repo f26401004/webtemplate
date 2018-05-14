@@ -1,0 +1,108 @@
+@import './common/_reset.scss'
+@import nav
+
+@mixin header
+$font-color: #F8F8F2
+#headerSec
+  width: 100%
+  height: 272px
+  background-color: #262E3E
+  padding: 2rem 0rem 0rem 0rem
+  display: grid
+  grid-template-rows: auto auto auto auto
+  grid-template-columns: 4rem 50% auto
+  overflow: hidden
+  #csieTitle
+    margin-left: 2rem
+    justify-self: start
+    display: grid
+    grid-row: 1 / span 2
+    grid-column: 1 / span 2
+    a
+      display: grid
+      grid-row: 1 / span 2
+      grid-column: 1 / span 2
+      justify-self: start
+      text-align: left
+    img
+      display: grid
+      grid-row: 1 / span 2
+      grid-column: 1
+      align-self: center
+      justify-self: start
+      width: 3.5rem;
+      height: auto;
+      padding-top: 3.5rem
+      margin-right: .5rem
+      background: $font-color
+      border-radius: 50%
+  h1
+    grid-row: 1
+    grid-column: 2
+    font-size: 1.7rem
+    font-weight: normal
+    color: $font-color
+    justify-self: start
+    align-self: end
+  h2
+    grid-row: 2
+    grid-column: 2
+    font-size: 1.3rem
+    color: $font-color
+    justify-self: start
+  .drop
+    grid-row: row 4
+    grid-column: 1 / span 3
+    width: 100%
+    display: none
+    text-align: right
+    justify-self: end
+    margin: 0rem
+    padding: 0 2rem 0 0
+    background-color: #00c3d0
+    a
+      display: inline-block
+      padding: .2rem 1.2rem .2rem 1.2rem
+      height: 100%
+      &:hover
+        background-color: #008891
+  input
+    grid-row: 1
+    grid-column: 3
+    width: 40%
+    height: 3rem
+    justify-self: end
+    align-self: end
+    background-color: rgba(0, 0, 0, 0)
+    margin-right: 3.5rem
+    border: .08rem solid #F8F8F2
+    border-radius: .5rem
+    padding: 1rem
+    color: #F8F8F2
+    font-size: 1.3rem
+    outline: none
+    &::placeholder
+      color: #F8F8F2
+      font-size: 1.3rem
+    &+a
+      justify-self: end
+      align-self: flex-end
+      text-align: right
+      font-size: 1.3rem
+      margin-right: 3.5rem
+      margin-top: 1rem
+  a
+    font-size: 1.5rem
+    color: $font-color
+    text-align: center
+    text-decoration: none
+#navBarUl
+  grid-row: row 3
+  grid-column: 1 / span 3
+  overflow: hidden
+  margin: 3rem 2rem 0 0
+  padding: 0rem
+  justify-self: end
+  align-self: stretch
+
+
