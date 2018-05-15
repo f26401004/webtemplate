@@ -7,7 +7,6 @@ const research = require( './research' );
 const announcement = require( './announcement' );
 const resource = require( './resource' );
 
-const config = require( '../settings/server/config' );
 
 const api = require( '../apis/urls' );
 
