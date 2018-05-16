@@ -22,7 +22,16 @@ module.exports = {
     // for testing
 
     get_test_data : () => {
-        return tables.announcement_post;
+        tables.announcement_post.hasMany(tables.announcement_post_detail, {foreignKey: 'announcement_id'});
+        test = tables.announcement_post.findAll({}).then(data => {
+            let result = [];
+            for(let iter of data)
+                result.push(iter);
+            return result;
+        }).catch ( err=> {
+            console.log(err);
+        });
+        return Promise.resolve(test)
     },
 
 

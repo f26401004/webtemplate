@@ -8,7 +8,6 @@ const announcementOp = require( '../models/announcement/operation/announcement_o
 // testing
 router.get( '/main_test', async ( req, res ) => {
     const a = await announcementOp.get_test_data();
-    console.log(a)
     res.status(200).json(a);
 } );
 
