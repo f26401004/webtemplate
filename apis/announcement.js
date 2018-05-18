@@ -6,37 +6,38 @@ const announcementOp = require( '../models/announcement/operation/announcement_o
 
 
 // testing
-router.get( '/main_test', async ( req, res ) => {
-    const a = await announcementOp.get_test_data();
+router.get( '/mainTest', async ( req, res ) => {
+    const a = await announcementOp.getAnnouncementPost([2, 3])
     res.status(200).json(a);
 } );
 
 
 // get articles by tag
-router.get( '/get_articles_by_tag', async (req, res) => {
-    let arr_tag_id = req.query.tag_id.split(',');
-    let arr_tag_id_int = arr_tag_id.map((x) => { 
+router.get( '/getArticlesByTag', async (req, res) => {
+    let arrTagId = req.query.tagId.split(',');
+    let arrTagIdInt = arrTagId.map((x) => { 
         return parseInt(x, 10); 
     });
 
-    const get_res = await announcementOp.get_articles_by_tag(arr_tag_id_int, req.query.language);
-    res.status(200).json(get_res);
+    const getRes = await announcementOp.getArticlesByTag(arrTagIdInt, req.query.language);
+    res.status(200).json(getRes);
 } );
 
 // get articles by tag and page
-router.get( '/get_articles_by_tag_page', async (req, res) => {
-    let arr_tag_id = req.query.tag_id.split(',');
-    let arr_tag_id_int = arr_tag_id.map((x) => { 
+router.get( '/getArticlesByTagPage', async (req, res) => {
+    let arrTagId = req.query.tagId.split(',');
+    let arrTagIdInt = arrTagId.map((x) => { 
         return parseInt(x, 10); 
     });
-    const get_res = await announcementOp.get_articles_by_tag_page(arr_tag_id_int, req.query.language, req.query.page);
-    res.status(200).json(get_res);
+    const getRes = await announcementOp.getArticlesByTagPage(arrTagIdInt, req.query.language, req.query.page);
+    res.status(200).json(getRes);
 } );
 
 // get latest hot articles
-router.get( '/get_latest_hot', async (req, res) => {
-    const get_res = await announcementOp.get_latest_hot(parseInt(req.query.article_num, 10), req.query.language);
-    res.status(200).json(get_res);
+router.get( '/getLatestHot', async (req, res) => {
+    console.log("test");
+    const getRes = await announcementOp.getLatestHot(parseInt(req.query.articleNum, 10), req.query.language);
+    res.status(200).json(getRes);
 } );
 
 

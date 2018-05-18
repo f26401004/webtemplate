@@ -1,7 +1,7 @@
-include ../components/announcement.pug
-include ../components/footer.pug
-include ../components/pagination.pug
-include ../components/header.pug
+include ../components/announcement/announcement.pug
+include ../components/announcement/title.pug
+include ../components/announcement/filter.pug
+
 doctype html
 html
   head
@@ -11,6 +11,7 @@ html
     section#content-container
       block title
       block filter
+      block topContent
       block content
       block page 
     block footer
