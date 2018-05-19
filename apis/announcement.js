@@ -4,40 +4,36 @@ const router = new express.Router();
 const announcementOp = require( '../models/announcement/operation/announcement_operation' );
 // const model = require( '../models/ncku_csie/' );
 
+// get post by tag and page
+router.get( '/getAnnouncementPostTotalNumber', async ( req, res ) => {
+    let tags = req.query.tags;
+    const language = req.query.language || 'ZH-TW';
+    if (tags !== undefined) {
+        tags = tags.split(',');    
+        const tagsInt = tags.map( (x) => parseInt(x, 10) );
+        const data = await announcementOp.getAnnouncementPostTotalNumber( tagsInt, language );
+        res.status(200).json(data);
+    } else {
+        const data = await announcementOp.getAnnouncementPostTotalNumber( [], 'ZH-TW' );
+        res.status(200).json(data);
+    }
 
-// testing
-router.get( '/mainTest', async ( req, res ) => {
-    const a = await announcementOp.getAnnouncementPost([2, 3])
-    res.status(200).json(a);
 } );
 
-
-// get articles by tag
-router.get( '/getArticlesByTag', async (req, res) => {
-    let arrTagId = req.query.tagId.split(',');
-    let arrTagIdInt = arrTagId.map((x) => { 
-        return parseInt(x, 10); 
-    });
-
-    const getRes = await announcementOp.getArticlesByTag(arrTagIdInt, req.query.language);
-    res.status(200).json(getRes);
-} );
-
-// get articles by tag and page
-router.get( '/getArticlesByTagPage', async (req, res) => {
-    let arrTagId = req.query.tagId.split(',');
-    let arrTagIdInt = arrTagId.map((x) => { 
-        return parseInt(x, 10); 
-    });
-    const getRes = await announcementOp.getArticlesByTagPage(arrTagIdInt, req.query.language, req.query.page);
-    res.status(200).json(getRes);
-} );
-
-// get latest hot articles
-router.get( '/getLatestHot', async (req, res) => {
-    console.log("test");
-    const getRes = await announcementOp.getLatestHot(parseInt(req.query.articleNum, 10), req.query.language);
-    res.status(200).json(getRes);
+// get post by tag and page
+router.get( '/getAnnouncementPost', async ( req, res ) => {
+    let tags = req.query.tags;
+    const language = req.query.language || 'ZH-TW';
+    const page = req.query.page || 1;
+    if (tags !== undefined) {
+        tags = tags.split(','); 
+        const tagsInt = tags.map( (x) => parseInt(x, 10) );
+        const data = await announcementOp.getAnnouncementPost( tagsInt, language, page );
+        res.status(200).json(data);
+    } else {
+        const data = await announcementOp.getAnnouncementPost( [], 'ZH-TW', page );
+        res.status(200).json(data);
+    }
 } );
 
 

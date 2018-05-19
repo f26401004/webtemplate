@@ -24,26 +24,10 @@ block topContent
    )
 block content
   main.announcement
-    +announcement__briefing(
-      {
-        title: '標題二',
-        time: '2018-2-2 | 15:02',
-        excerpt: '一小段內文一小段內文一小段內文一小段內文一小段內文一小段內文一小段內文一小段內文一小段內文',
-        articleUrl: '/about/teachers',
-        tags: [ 'college', 'speech', 'phd' ],
-        classname: 'announcement'
-      }
-   )
-    +announcement__briefing(
-      {
-        title: '標題二',
-        time: '2018-2-2 | 15:02',
-        excerpt: '兩小段內文',
-        articleUrl: '',
-        tags: [ 'recruitment', 'teacher', 'exhibition' ],
-        classname: 'announcement'
-      }
-   )
+
 block page
 block footer
 block script
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  script(src='/js/pagination.js')
+  script(src='/js/post.js')

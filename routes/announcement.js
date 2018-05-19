@@ -1,9 +1,10 @@
 // router for /announcement
 const express = require( 'express' );
 const router = new express.Router();
+const announcementOp = require( '../models/announcement/operation/announcement_operation' );
 
 // resolve URL /announcement/all
-router.get( '/all', function ( req, res ) {
+router.get( '/all', async function ( req, res ) {
     res.sendFile( `${ global.projectRoot }/static/dist/html/announcement/all.html` );
 } );
 
